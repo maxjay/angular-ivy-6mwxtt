@@ -1,0 +1,14 @@
+:host {
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  width: 500px;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
