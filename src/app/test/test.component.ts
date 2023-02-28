@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, EventEmitter, Output, VERSION } from '@angular/core';
 import { timer } from 'rxjs';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -8,12 +8,15 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./test.component.css'],
 })
 export class TestComponent {
+  @Output() clickk = new EventEmitter<void>();
+
   save(data: any, dialog: DialogComponent) {
     console.log('clicked');
   }
 
   close() {
     console.log('close');
+    this.clickk.emit();
   }
 
   ngOnInit() {

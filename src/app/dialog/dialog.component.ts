@@ -33,6 +33,7 @@ export class DialogComponent {
   }
 
   close() {
+    console.log('hello');
     this.element.close();
     this.closeEvent.emit();
     // this.clear();
@@ -44,15 +45,21 @@ export class DialogComponent {
 
   private clear() {}
 
-  @HostListener('click', ['$event'])
-  onDialogClick(event: MouseEvent) {
-    if ((event.target as any).nodeName === 'DIALOG') {
-      this.close();
-    }
-  }
+  // @HostListener('click', ['$event'])
+  // onDialogClick(event: MouseEvent) {
+  //   console.log('hmpph not sure');
+  //   if ((event.target as any).nodeName === 'DIALOG') {
+  //     this.close();
+  //   }
+  // }
 
   @HostListener('cancel')
   onDialogCancel() {
+    console.log('hmpph maybe');
     this.clear();
+  }
+
+  clack() {
+    console.log('hello');
   }
 }
